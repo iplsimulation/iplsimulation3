@@ -53,9 +53,14 @@ def findQA(subj, q, ret=False):
             qs = [q for q, score in qs]
             st.subheader('Not found, five most similar questions are:')
             q_, a_ = findQA(subj, qs, ret=True)
-            for i in range(5):
-                st.write(f'Question {i+1}: {q_[i]}')
-                st.write(f'Answer {i+1}: {a_[i]}')
+            if len(q_) >= 5:              
+                for i in range(5):
+                    st.write(f'Question {i+1}: {q_[i]}')
+                    st.write(f'Answer {i+1}: {a_[i]}')
+                    st.write('-'*30)
+            else:
+                st.write(f'Question: {q_[0]}')
+                st.write(f'Answer: {a_[0]}')
                 st.write('-'*30)
         
     elif ret:
@@ -85,7 +90,7 @@ def log(t, u, s, q, a):
 def main():
     st.header('IPL Simulation')
     username = st.sidebar.text_input('Username:')
-    password = st.sidebar.text_input('Password:', type='password')
+    password = st.sidebar.text_input('Password:')
     if st.sidebar.checkbox('Login'):
         if authenticate(username, password):
             st.success(f'Logged in as {username.title()}')
