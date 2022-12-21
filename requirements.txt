@@ -1,3 +1,5 @@
+protobuf
+inotify
 gspread
 google-api-python-client
 oauth2client
@@ -6,4 +8,4 @@ pandas
 fuzzywuzzy
 python-Levenshtein
 pytz
-inotify
+
