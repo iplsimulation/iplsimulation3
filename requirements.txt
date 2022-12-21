@@ -1,9 +1,7 @@
-protobuf
 inotify
 gspread
 google-api-python-client
 oauth2client
-streamlit==1.1.0
 pandas
 fuzzywuzzy
 python-Levenshtein
